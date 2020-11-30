@@ -9,7 +9,7 @@ sudo ./install
 ```
 
 ## License
-This proect is licensed under the MIT License.
+This project is licensed under the MIT License.
 
 ## Usage
 ```
