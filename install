@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Startup
+echo "Installing Scan Master 1.5"
+echo "Please make sure you are executing as root, or the installation will fail. Ctrl + C to cancel."
+echo ""
+
+# Remove old versions of the software
+echo "Searching and deleting old versions of scanmaster..."
+rm -rf /etc/scanmaster
+rm -rf /usr/bin/scanmaster
+echo ""
+
+# Dependencies
+echo "Installing dependencies..."
+echo ""
+apt install nmap gobuster figlet
+
+# /etc/
+echo ""
+echo "Creating /etc/scanmaster..."
+echo ""
+cp -r etc/scanmaster /etc/
+
+# CLI
+echo "Installing CLI..."
+cp scanmaster /usr/bin/
+
+# End
+echo ""
+echo "Installation Finished."
+echo "Thank you for choosing RafaTech Development."
+echo "Launch ScanMaster using the command: 'scanmaster'"
+echo ""

@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Logo
+figlet "Scan Master"
+echo ""
+echo "A scanning tool for web servers."
+echo ""
+
+# Args Check
+if [ $1 ]; then
+# Start Scan
+
+# nmap
+echo "Starting NMAP... ($ nmap -sC -sV $1)"
+echo ""
+nmap -sC -sV $1
+
+# gobuster
+echo ""
+echo "Starting GoBuster... ($ gobuster dir -w /etc/scanmaster/wordlist -u $1)"
+echo ""
+gobuster -w /etc/scanmaster/wordlist -u $1
+
+# finish
+echo ""
+echo "Scan finished."
+echo "Scan Master has finished this scan."
+else
+# No IP
+echo "Please enter an ip to scan before the command."
+echo ""
+fi
