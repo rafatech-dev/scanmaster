@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Startup
+echo "Scan Master Uninstaller V.Linux-1.5"
+echo "By: RafaTech Development"
+echo ""
+
+# Permissions
+if [[ $(/usr/bin/id -u) -ne 0 ]]; then
+# No Permissions
+
+echo "Uninstaller must be run as root (sudo mode)"
+echo "Aborted."
+echo "Please try again as root user."
+exit
+fi
+
+# Remove the software
+echo "Removing Scan Master..."
+rm -rf /etc/scanmaster
+rm -rf /usr/bin/scanmaster
+echo ""
+
+# Success
+echo "Scan Master was successfully uninstalled."
+echo "If you did not like the software please inform us to see what we can do."
+echo ""

@@ -1,9 +1,19 @@
 #!/bin/bash
 
 # Startup
-echo "Installing Scan Master 1.5"
-echo "Please make sure you are executing as root, or the installation will fail. Ctrl + C to cancel."
+echo "Scan Master Installation V.Linux-1.5"
+echo "By: RafaTech Development"
 echo ""
+
+# Permissions
+if [[ $(/usr/bin/id -u) -ne 0 ]]; then
+# No Permissions
+
+echo "Installation must be run as root (sudo mode)"
+echo "Installation Aborted."
+echo "Please try again as root user."
+exit
+fi
 
 # Remove old versions of the software
 echo "Searching and deleting old versions of scanmaster..."
