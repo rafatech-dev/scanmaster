@@ -35,6 +35,7 @@ cp -r etc/scanmaster /etc/
 # CLI
 echo "Installing CLI..."
 cp scanmaster /usr/bin/
+chmod +x /usr/bin/scanmaster
 
 # End
 echo ""
